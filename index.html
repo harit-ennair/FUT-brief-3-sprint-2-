@@ -3,19 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Player Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     
+    <nav class="navber">
+        <div class="Logo">
+            <img src="./image/Easports_fifa_logo.svg" alt="Logo">
+            <span>Player Form</span>
+        </div>
+    </nav>
+
+    
+    <div  class="main">
+
+        <div style=" background-image: url(/image/stadium_background.webp); background-repeat: no-repeat; background-size: cover; height: 90vh; width: 1400px; margin: 20px; border-radius: 10px; ">
+            
+        
+        <div class="positionplayr" id="attack">
+
+
+            <div class="post" id="lwcard">
+                <!-- <span id="test_img"></span> -->
+                <span id="test_name"></span>
+                <!-- <img id="imageElement" src="" alt="Player Image"> -->
+            </div>
+            <div class="post" id="stcard"></div>
+            <div class="post" id="rwcard"></div>
+        </div>
+        
+        
+        <div class="positionplayr" id="medfild">
+            <div class="post" ></div>
+            <div class="post" ></div>
+            <div class="post" ></div>
+
+        </div>
+        
+        
+        <div class="positionplayr" id="defans">
+            
+            <div class="post" id="lbcard" ></div>
+            <div class="post" ></div>
+            <div class="post" ></div>
+            <div class="post" id="rbcard"></div>
+
+        
+        </div>
+        
+        
+        <div class="positionplayr" id="goal">
+            
+            <div class="post" id="gkcard"></div>
+
+        </div>
+        
+        
+        
+        
+        
+        </div>
+
+        <div class="sub" style=" height: 90vh; margin: 20px;  "> </div>
+        <div  class="container">
+            <h1>Add Player</h1>
+            <form id="playerForm">
+                <div class="form-group">
+                    <label for="name">Player Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo URL</label>
+                    <input type="url" id="photo" name="photo" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <select id="position" name="position" required>
+                        <option value="RW">Right Wing</option>
+                        <option value="LW">Left Wing</option>
+                        <option value="CF">Center Forward</option>
+                        <option value="CM">Center Midfielder</option>
+                        <option value="CDM">Defensive Midfielder</option>
+                        <option value="CB">Center Back</option>
+                        <option value="GK">Goalkeeper</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality" name="nationality" required>
+                </div>
+                <div class="form-group">
+                    <label for="club">Club</label>
+                    <input type="text" id="club" name="club" required>
+                </div>
 
 
 
 
+<div style="display: flex; flex-wrap: wrap;">
+
+                <div class="form-group-pl">
+                    <label for="rating">Rating</label>
+                    <input type="number" id="rating" name="rating" >
+                </div>
+                <div class="form-group-pl">
+                    <label for="pace">Pace</label>
+                    <input type="number" id="pace" name="pace" >
+                </div>
+                <div class="form-group-pl">
+                    <label for="shooting">Shooting</label>
+                    <input type="number" id="shooting" name="shooting" >
+                </div>
+                <div class="form-group-pl">
+                    <label for="passing">Passing</label>
+                    <input type="number" id="passing" name="passing" >
+                </div>
+                <div class="form-group-pl">
+                    <label for="dribbling">Dribbling</label>
+                    <input type="number" id="dribbling" name="dribbling" >
+                </div>
+                <div class="form-group-pl">
+                    <label for="defending">Defending</label>
+                    <input type="number" id="defending" name="defending" >
+                </div>
+                <div class="form-group-pl">
+                    <label for="physical">Physical</label>
+                    <input type="number" id="physical" name="physical" >
+                </div>
+ </div>
 
 
 
+ <div style="display: flex; flex-wrap: wrap;">
 
-    <script src="/script.js"></script>
+                <div class="form-group-gk">
+                    <label for="rating">Rating</label>
+                    <input type="number" id="rating" name="rating" >
+                </div>
+                <div class="form-group-gk" style="display: none;">
+                    <label for="diving">Diving</label>
+                    <input type="number" id="diving" name="diving" >
+                </div>
+                <div class="form-group-gk" style="display: none;">
+                    <label for="handling">Handling</label>
+                    <input type="number" id="handling" name="handling" >
+                </div>
+                <div class="form-group-gk" style="display: none;">
+                    <label for="kicking">Kicking</label>
+                    <input type="number" id="kicking" name="kicking" >
+                </div>
+                <div class="form-group-gk" style="display: none;">
+                    <label for="reflexes">Reflexes</label>
+                    <input type="number" id="reflexes" name="reflexes" >
+                </div>
+                <div class="form-group-gk" style="display: none;">
+                    <label for="speed">Speed</label>
+                    <input type="number" id="speed" name="speed" >
+                </div>
+                <div class="form-group-gk" style="display: none;">
+                    <label for="positioning">Positioning</label>
+                    <input type="number" id="positioning" name="positioning" >
+                </div>
+
+            </div>
+
+
+
+                <button type="submit">Add Player</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 </html>

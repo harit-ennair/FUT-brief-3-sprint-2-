@@ -1,0 +1,183 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav.navber {
+    background-color: #0073e6;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+nav.navber .Logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+nav.navber .Logo img {
+    max-width: 120px;
+    margin-right: 10px;
+}
+
+nav.navber .Logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+ 
+    align-items: center;
+    min-height: 80vh;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    box-sizing: border-box;
+    text-align: start;
+}
+.sub {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+   
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+
+
+
+.form-group,
+.form-group-gk,
+.form-group-pl   {
+    margin-bottom: 15px;
+}
+
+.form-group label,
+.form-group-gk label,
+.form-group-pl label  {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group-gk input,
+.form-group-gk select,
+.form-group-pl input,
+.form-group-pl select  {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group-gk input:focus,
+.form-group-gk select:focus,
+.form-group-pl input:focus,
+.form-group-pl select:focus
+  {
+    border-color: #0073e6;
+    outline: none;
+}
+
+
+
+ .form-group-gk input,
+ .form-group-pl input {
+     width: 120px;
+     margin-right: 20px;
+   
+ }
+ 
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+.positionplayr{
+    display: flex;
+
+height: 180px;
+width: 1100px;
+margin: 20px;
+justify-content: center;
+align-items: center;
+gap: 150px;
+
+}
+
+
+.post{
+    height: 190px;
+    width: 130px;
+   
+    background-image: url(/image/placeholder-card-normal.webp);
+
+    background-repeat: no-repeat; background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
