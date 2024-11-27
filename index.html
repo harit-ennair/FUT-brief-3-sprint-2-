@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    
+
     <nav class="navber">
         <div class="Logo">
             <img src="./image/Easports_fifa_logo.svg" alt="Logo">
@@ -16,58 +18,52 @@
         </div>
     </nav>
 
-    
-    <div  class="main">
 
-        <div style=" background-image: url(/image/stadium_background.webp); background-repeat: no-repeat; background-size: cover; height: 90vh; width: 1400px; margin: 20px; border-radius: 10px; ">
-            
-        
-        <div class="positionplayr" id="attack">
+    <div class="main">
+
+        <div
+            style=" background-image: url(/image/stadium_background.webp); background-repeat: no-repeat; background-size: cover; height: 90vh; width: 1400px; margin: 20px; border-radius: 10px; ">
 
 
-            <div class="post" id="lwcard">
-                <!-- <span id="test_img"></span> -->
-                <span id="test_name"></span>
-                <!-- <img id="imageElement" src="" alt="Player Image"> -->
+            <div class="positionplayr" id="attack">
+
+
+                <div class="post" id="lwcard"></div>
+                <div class="post" id="stcard"></div>
+                <div class="post" id="rwcard"></div>
             </div>
-            <div class="post" id="stcard"></div>
-            <div class="post" id="rwcard"></div>
-        </div>
-        
-        
-        <div class="positionplayr" id="medfild">
-            <div class="post" ></div>
-            <div class="post" ></div>
-            <div class="post" ></div>
+
+
+            <div class="positionplayr" id="medfild">
+
+
+            </div>
+
+
+            <div class="positionplayr" id="defans">
+
+                <div class="post" id="lbcard"></div>
+                <div class="post" id="CBcard"></div>
+
+                <div class="post" id="rbcard"></div>
+
+
+            </div>
+
+
+            <div class="positionplayr" id="goal">
+
+
+
+            </div>
+
 
         </div>
-        
-        
-        <div class="positionplayr" id="defans">
-            
-            <div class="post" id="lbcard" ></div>
-            <div class="post" ></div>
-            <div class="post" ></div>
-            <div class="post" id="rbcard"></div>
 
-        
+        <div class="sub" style=" height: 90vh; margin: 20px;  ">
+            <h1>Sub Players</h1>
         </div>
-        
-        
-        <div class="positionplayr" id="goal">
-            
-            <div class="post" id="gkcard"></div>
-
-        </div>
-        
-        
-        
-        
-        
-        </div>
-
-        <div class="sub" style=" height: 90vh; margin: 20px;  "> </div>
-        <div  class="container">
+        <div class="container">
             <h1>Add Player</h1>
             <form id="playerForm">
                 <div class="form-group">
@@ -87,6 +83,8 @@
                         <option value="CM">Center Midfielder</option>
                         <option value="CDM">Defensive Midfielder</option>
                         <option value="CB">Center Back</option>
+                        <option value="RB">Right Back</option>
+                        <option value="LB">Left Back</option>
                         <option value="GK">Goalkeeper</option>
                     </select>
                 </div>
@@ -102,72 +100,72 @@
 
 
 
-<div style="display: flex; flex-wrap: wrap;">
+                <div style="display: flex; flex-wrap: wrap;">
 
-                <div class="form-group-pl">
-                    <label for="rating">Rating</label>
-                    <input type="number" id="rating" name="rating" >
-                </div>
-                <div class="form-group-pl">
-                    <label for="pace">Pace</label>
-                    <input type="number" id="pace" name="pace" >
-                </div>
-                <div class="form-group-pl">
-                    <label for="shooting">Shooting</label>
-                    <input type="number" id="shooting" name="shooting" >
-                </div>
-                <div class="form-group-pl">
-                    <label for="passing">Passing</label>
-                    <input type="number" id="passing" name="passing" >
-                </div>
-                <div class="form-group-pl">
-                    <label for="dribbling">Dribbling</label>
-                    <input type="number" id="dribbling" name="dribbling" >
-                </div>
-                <div class="form-group-pl">
-                    <label for="defending">Defending</label>
-                    <input type="number" id="defending" name="defending" >
-                </div>
-                <div class="form-group-pl">
-                    <label for="physical">Physical</label>
-                    <input type="number" id="physical" name="physical" >
-                </div>
- </div>
-
-
-
- <div style="display: flex; flex-wrap: wrap;">
-
-                <div class="form-group-gk">
-                    <label for="rating">Rating</label>
-                    <input type="number" id="rating" name="rating" >
-                </div>
-                <div class="form-group-gk" style="display: none;">
-                    <label for="diving">Diving</label>
-                    <input type="number" id="diving" name="diving" >
-                </div>
-                <div class="form-group-gk" style="display: none;">
-                    <label for="handling">Handling</label>
-                    <input type="number" id="handling" name="handling" >
-                </div>
-                <div class="form-group-gk" style="display: none;">
-                    <label for="kicking">Kicking</label>
-                    <input type="number" id="kicking" name="kicking" >
-                </div>
-                <div class="form-group-gk" style="display: none;">
-                    <label for="reflexes">Reflexes</label>
-                    <input type="number" id="reflexes" name="reflexes" >
-                </div>
-                <div class="form-group-gk" style="display: none;">
-                    <label for="speed">Speed</label>
-                    <input type="number" id="speed" name="speed" >
-                </div>
-                <div class="form-group-gk" style="display: none;">
-                    <label for="positioning">Positioning</label>
-                    <input type="number" id="positioning" name="positioning" >
+                    <div class="form-group-pl">
+                        <label for="rating">Rating</label>
+                        <input type="number" id="rating" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-pl">
+                        <label for="pace">Pace</label>
+                        <input type="number" id="pace" name="pace" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-pl">
+                        <label for="shooting">Shooting</label>
+                        <input type="number" id="shooting" name="shooting" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-pl">
+                        <label for="passing">Passing</label>
+                        <input type="number" id="passing" name="passing" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-pl">
+                        <label for="dribbling">Dribbling</label>
+                        <input type="number" id="dribbling" name="dribbling" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-pl">
+                        <label for="defending">Defending</label>
+                        <input type="number" id="defending" name="defending" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-pl">
+                        <label for="physical">Physical</label>
+                        <input type="number" id="physical" name="physical" name="rating" min="1" max="99">
+                    </div>
                 </div>
 
-            </div>
+
+
+                <div style="display: flex; flex-wrap: wrap;">
+
+                    <div class="form-group-gk">
+                        <label for="rating">Rating</label>
+                        <input type="number" id="rating" name="rating" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-gk" style="display: none;">
+                        <label for="diving">Diving</label>
+                        <input type="number" id="diving" name="diving" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-gk" style="display: none;">
+                        <label for="handling">Handling</label>
+                        <input type="number" id="handling" name="handling" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-gk" style="display: none;">
+                        <label for="kicking">Kicking</label>
+                        <input type="number" id="kicking" name="kicking" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-gk" style="display: none;">
+                        <label for="reflexes">Reflexes</label>
+                        <input type="number" id="reflexes" name="reflexes" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-gk" style="display: none;">
+                        <label for="speed">Speed</label>
+                        <input type="number" id="speed" name="speed" name="rating" min="1" max="99">
+                    </div>
+                    <div class="form-group-gk" style="display: none;">
+                        <label for="positioning">Positioning</label>
+                        <input type="number" id="positioning" name="positioning" name="rating" min="1" max="99">
+                    </div>
+
+                </div>
 
 
 
@@ -177,6 +175,19 @@
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
