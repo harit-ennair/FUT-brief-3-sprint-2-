@@ -47,7 +47,7 @@ nav.navber .Logo span {
     box-sizing: border-box;
     text-align: start;
 }
-.sub {
+.substitute {
     background-color: white;
     padding: 10px;
     border-radius: 8px;
@@ -156,29 +156,158 @@ gap: 150px;
     justify-content: space-between;
 
 }
-/* 
-#CBcard,
-#stcard{
-
-    justify-self:center;
-} */
 
 
 
-
-/* 
-.post{
-    height: 190px;
-    width: 130px;
-   
-    background-image: url(/image/silver1.png);
-
-    background-repeat: no-repeat; background-size: cover;
-} */
 
 #CBcard{
     display: flex;
     gap: 100px;
+  }    
+  
+  
+  
+  
+
+.LM {
+  height: 200px;
+  width: 150px;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}  
+.LM:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 10px rgb(154, 180, 9));
+}  
+
+.overlay {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}  
+
+.card-content {
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0px;
+}  
+
+
+
+.player-name,
+.player-club {
+  font-size: 0.1em;
+  margin: 0px;
+  
+}  
+
+.player-stats{
+  
+  
+  display: flex;
+  justify-self: center;
+  gap: 6px;
+  font-size: 0.8em;
+  
+}  
+
+.player-stats-content{
+  
+  display: flex;
+  justify-self: center;
+  word-spacing: 2px;
+  font-size: 0.5em;
+  
+}  
+
+#rayting-pransipal{
+  justify-self: start;
+  
+  margin-top: 45px;  
+  margin-left: 20px;
+
+  
+}  
+
+
+#playerphotocontainr{
+  
+  height: 80px;  
+  width: 80px;
+
+margin-left:47px ;
+margin-top: -32px;
+
+
+}
+
+#playerphoto{
+  width: 100%;
+
+}
+p{
+  margin: 0px;
+}
+
+
+select {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+option {
+  padding: 10px;
+}
+
+.flag {
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+#photoflagclubcontainr{
+  
+    height: 45px;
+    width: 34px;
+    margin-top: -52px;
+    margin-left: -32px;
+}
+
+
+
+#photoclubcontainr,
+#photoflagcontainr{
+
+  height: 22px;
+  width: 33px;
+}
+
+
+#clubphoto,
+#flagphoto{
+
+width: 80%;
+
 }
 
 
@@ -193,43 +322,23 @@ gap: 150px;
 
 
 
-.LM {
-    height: 200px;
-    width: 150px;
-    border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    box-sizing: border-box;
-  }
-  
-  .LM:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 4px 10px rgb(154, 180, 9));
-  }
-  
-  .overlay {
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  
-  .card-content {
-    width: 100%;
-    color: white;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  
+
+
+
+
+
+
+
+.stat {
+
+  font-size: 0.1em;
+}
+.stat strong {
+  font-weight: bold;
+}
+
+
+
 
 
 

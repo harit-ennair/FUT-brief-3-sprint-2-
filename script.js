@@ -61,15 +61,130 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
+
+
+
+        
+
         const playerCard = document.createElement('div');
         playerCard.classList.add('LM');
+        // playerCard.style.background-color="red";
 
 
         const cardContent = document.createElement('div');
         cardContent.classList.add('card-content');
 
+
+
+
+
+
+
+
+
+        const raytingpransipal = document.createElement('div');  
+        raytingpransipal.id = 'rayting-pransipal';  
+
+
+
+
+
+
+
+
+        const playerphotocontainr = document.createElement('div');  
+        playerphotocontainr.id = 'playerphotocontainr';  
+        
+
+        const photoflagclubcontainr = document.createElement('div');  
+        photoflagclubcontainr.id = 'photoflagclubcontainr';  
+
+        const photoflagcontainr = document.createElement('div');  
+        photoflagcontainr.id = 'photoflagcontainr';  
+        
+        const flagphoto = document.createElement('img');  
+        flagphoto.id = 'flagphoto'
+
+        photoflagclubcontainr.appendChild(photoflagcontainr);
+        photoflagcontainr.appendChild(flagphoto);
+        flagphoto.src = nationality;
+
+
+
+        const photoclubcontainr = document.createElement('div');  
+        photoclubcontainr.id = 'photoclubcontainr'; 
+        
+        const clubphoto = document.createElement('img');  
+        clubphoto.id = 'clubphoto'
+
+        photoflagclubcontainr.appendChild(photoclubcontainr);
+        photoclubcontainr.appendChild(clubphoto);
+        clubphoto.src = club;
+
+
+      
+        
+
+
+
+        
+        const playerphoto = document.createElement('img');  
+        playerphoto.id = 'playerphoto'
+        playerphoto.src = photo;
+
+
+
+        playerphotocontainr.appendChild(playerphoto);
+        playerphotocontainr.appendChild(photoflagclubcontainr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        const playerrayting = document.createElement('p');
+        playerrayting.textContent = rating;
+        raytingpransipal.appendChild(playerrayting)
+
+
+        const playerpost = document.createElement('p');
+        playerpost.textContent = position;
+        raytingpransipal.appendChild(playerpost)
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
         const playerName = document.createElement('p');
         playerName.textContent = name;
+
+
+
+        const playerStatscontent = document.createElement('div');
+        playerStatscontent.classList.add('player-stats-content');
+
+        const playerrait = document.createElement('p');
+        playerrait.textContent="PAC  SHO  PAS  DRI  DEF  PHY"
+        playerStatscontent.appendChild(playerrait)
+
 
         const playerStats = document.createElement('div');
         playerStats.classList.add('player-stats');
@@ -84,17 +199,29 @@ document.addEventListener('DOMContentLoaded', function () {
             return stat;
         }
 
-        playerStats.appendChild(createStat('Rating: ', rating));
-        playerStats.appendChild(createStat('Pace: ', pace));
-        playerStats.appendChild(createStat('Shooting: ', shooting));
-        playerStats.appendChild(createStat('Passing: ', passing));
-        playerStats.appendChild(createStat('Dribbling: ', dribbling));
-        playerStats.appendChild(createStat('Defending: ', defending));
-        playerStats.appendChild(createStat('Physical: ', physical));
 
+
+        // playerStats.appendChild(createStat('', rating));
+        playerStats.appendChild(createStat('', pace));
+        playerStats.appendChild(createStat('', shooting));
+        playerStats.appendChild(createStat('', passing));
+        playerStats.appendChild(createStat('', dribbling));
+        playerStats.appendChild(createStat('', defending));
+        playerStats.appendChild(createStat('', physical));
+
+        
+        cardContent.appendChild(raytingpransipal);
+        cardContent.appendChild(playerphotocontainr);
         cardContent.appendChild(playerName);
+        cardContent.appendChild(playerStatscontent);
         cardContent.appendChild(playerStats);
         playerCard.appendChild(cardContent);
+
+
+
+
+
+
 
 
 
@@ -171,3 +298,6 @@ document.addEventListener('DOMContentLoaded', function () {
     positionSelect.addEventListener('change', toggleGoalkeeperFields);
     toggleGoalkeeperFields();
 });
+
+
+
