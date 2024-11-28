@@ -20,14 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const physical = document.getElementById('physical').value;
 
 
+        const diving = document.getElementById('diving').value;
+        const handling = document.getElementById('handling').value;
+        const kicking = document.getElementById('kicking').value;
+        const reflexes = document.getElementById('reflexes').value;
+        const speed = document.getElementById('speed').value;
+        const positioning = document.getElementById('positioning').value;
+
 
 
         if (rating < 1 || rating > 99 || pace < 1 || pace > 99 || shooting < 1 || shooting > 99 || passing < 1 || passing > 99 || dribbling < 1 || dribbling > 99 || defending < 1 || defending > 99 || physical < 1 || physical > 99) {
             alert("Please respect the role of the rating .");
             return;
         }
-
-
 
 
         if (!name || !photo || !nationality || !club || !position || !rating) {
@@ -64,11 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        
+
 
         const playerCard = document.createElement('div');
         playerCard.classList.add('LM');
-        // playerCard.style.background-color="red";
+
 
 
         const cardContent = document.createElement('div');
@@ -76,33 +81,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+        const raytingpransipal = document.createElement('div');
+        raytingpransipal.id = 'rayting-pransipal';
 
 
 
+        const playerphotocontainr = document.createElement('div');
+        playerphotocontainr.id = 'playerphotocontainr';
 
 
+        const photoflagclubcontainr = document.createElement('div');
+        photoflagclubcontainr.id = 'photoflagclubcontainr';
 
-        const raytingpransipal = document.createElement('div');  
-        raytingpransipal.id = 'rayting-pransipal';  
+        const photoflagcontainr = document.createElement('div');
+        photoflagcontainr.id = 'photoflagcontainr';
 
-
-
-
-
-
-
-
-        const playerphotocontainr = document.createElement('div');  
-        playerphotocontainr.id = 'playerphotocontainr';  
-        
-
-        const photoflagclubcontainr = document.createElement('div');  
-        photoflagclubcontainr.id = 'photoflagclubcontainr';  
-
-        const photoflagcontainr = document.createElement('div');  
-        photoflagcontainr.id = 'photoflagcontainr';  
-        
-        const flagphoto = document.createElement('img');  
+        const flagphoto = document.createElement('img');
         flagphoto.id = 'flagphoto'
 
         photoflagclubcontainr.appendChild(photoflagcontainr);
@@ -111,10 +105,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        const photoclubcontainr = document.createElement('div');  
-        photoclubcontainr.id = 'photoclubcontainr'; 
-        
-        const clubphoto = document.createElement('img');  
+        const photoclubcontainr = document.createElement('div');
+        photoclubcontainr.id = 'photoclubcontainr';
+
+        const clubphoto = document.createElement('img');
         clubphoto.id = 'clubphoto'
 
         photoflagclubcontainr.appendChild(photoclubcontainr);
@@ -122,13 +116,13 @@ document.addEventListener('DOMContentLoaded', function () {
         clubphoto.src = club;
 
 
-      
-        
 
 
 
-        
-        const playerphoto = document.createElement('img');  
+
+
+
+        const playerphoto = document.createElement('img');
         playerphoto.id = 'playerphoto'
         playerphoto.src = photo;
 
@@ -140,17 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-        
         const playerrayting = document.createElement('p');
         playerrayting.textContent = rating;
         raytingpransipal.appendChild(playerrayting)
@@ -159,19 +142,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const playerpost = document.createElement('p');
         playerpost.textContent = position;
         raytingpransipal.appendChild(playerpost)
-        
 
 
 
-
-
-
-
-
-
-
-
-        
 
         const playerName = document.createElement('p');
         playerName.textContent = name;
@@ -182,8 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
         playerStatscontent.classList.add('player-stats-content');
 
         const playerrait = document.createElement('p');
-        playerrait.textContent="PAC  SHO  PAS  DRI  DEF  PHY"
-        playerStatscontent.appendChild(playerrait)
+        playerrait.textContent = "PAC  SHO  PAS  DRI  DEF  PHY"
+
+        const playerraitgk = document.createElement('p');
+        playerraitgk.textContent = "DIV HAN KIC REF SPE POS"
 
 
         const playerStats = document.createElement('div');
@@ -200,31 +175,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
+        if (positionSelect.value === 'GK') {
 
-        // playerStats.appendChild(createStat('', rating));
-        playerStats.appendChild(createStat('', pace));
-        playerStats.appendChild(createStat('', shooting));
-        playerStats.appendChild(createStat('', passing));
-        playerStats.appendChild(createStat('', dribbling));
-        playerStats.appendChild(createStat('', defending));
-        playerStats.appendChild(createStat('', physical));
+            playerStats.appendChild(createStat('', diving));
+            playerStats.appendChild(createStat('', handling));
+            playerStats.appendChild(createStat('', kicking));
+            playerStats.appendChild(createStat('', reflexes));
+            playerStats.appendChild(createStat('', speed));
+            playerStats.appendChild(createStat('', positioning));
+            playerStatscontent.appendChild(playerraitgk)
 
-        
+        } else {
+
+            playerStats.appendChild(createStat('', pace));
+            playerStats.appendChild(createStat('', shooting));
+            playerStats.appendChild(createStat('', passing));
+            playerStats.appendChild(createStat('', dribbling));
+            playerStats.appendChild(createStat('', defending));
+            playerStats.appendChild(createStat('', physical));
+            playerStatscontent.appendChild(playerrait)
+
+        }
+
         cardContent.appendChild(raytingpransipal);
         cardContent.appendChild(playerphotocontainr);
         cardContent.appendChild(playerName);
         cardContent.appendChild(playerStatscontent);
         cardContent.appendChild(playerStats);
         playerCard.appendChild(cardContent);
-
-
-
-
-
-
-
-
-
 
         if (rating < 50) {
             playerCard.style.backgroundImage = `url(/image/silver1.png)`;
@@ -236,17 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             playerCard.style.backgroundImage = `url(/image/badge_total_rush.webp)`;
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
         if (position === 'CF') {
@@ -269,16 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         playerForm.reset();
 
-
-
-
-
-
-
-
-
-
-
     });
 
     const positionSelect = document.getElementById('position');
@@ -298,6 +255,12 @@ document.addEventListener('DOMContentLoaded', function () {
     positionSelect.addEventListener('change', toggleGoalkeeperFields);
     toggleGoalkeeperFields();
 });
+
+
+
+
+
+
 
 
 
