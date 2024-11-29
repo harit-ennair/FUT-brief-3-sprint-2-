@@ -67,13 +67,13 @@ h1 {
 
 
 .form-group,
-.form-group-gk,
+
 .form-group-pl {
   margin-bottom: 15px;
 }
 
 .form-group label,
-.form-group-gk label,
+
 .form-group-pl label {
   font-size: 1em;
   color: #333;
@@ -83,8 +83,7 @@ h1 {
 
 .form-group input,
 .form-group select,
-.form-group-gk input,
-.form-group-gk select,
+
 .form-group-pl input,
 .form-group-pl select {
   width: 100%;
@@ -97,17 +96,17 @@ h1 {
 
 .form-group input:focus,
 .form-group select:focus,
-.form-group-gk input:focus,
-.form-group-gk select:focus,
+
 .form-group-pl input:focus,
 .form-group-pl select:focus {
   border-color: #0073e6;
   outline: none;
 }
+ 
+.form-group-pl{
+  display: none;
+} 
 
-
-
-.form-group-gk input,
 .form-group-pl input {
   width: 120px;
   margin-right: 20px;

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     playerForm.addEventListener('submit', function (event) {
         event.preventDefault();
-     
+
         const addplayer = document.getElementById('addplayer')
 
         const name = document.getElementById('name').value;
@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const nationality = document.getElementById('nationality').value;
         const club = document.getElementById('club').value;
 
-        const rating = document.getElementById('rating').value;
         const pace = document.getElementById('pace').value;
         const shooting = document.getElementById('shooting').value;
         const passing = document.getElementById('passing').value;
@@ -21,16 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const defending = document.getElementById('defending').value;
         const physical = document.getElementById('physical').value;
 
-        const diving = document.getElementById('diving').value;
-        const handling = document.getElementById('handling').value;
-        const kicking = document.getElementById('kicking').value;
-        const reflexes = document.getElementById('reflexes').value;
-        const speed = document.getElementById('speed').value;
-        const positioning = document.getElementById('positioning').value;
 
 
+            const pace1 = parseInt(pace) || 0;
+            const shooting1 = parseInt(shooting) || 0;
+            const passing1 = parseInt(passing) || 0;
+            const dribbling1 = parseInt(dribbling) || 0;
+            const defending1 = parseInt(defending) || 0;
+            const physical1 = parseInt(physical) || 0;
+        
+        const rating = parseInt((pace1 + shooting1 + passing1 + dribbling1 + defending1 + physical1) / 6);
+        
 
-        if (rating < 1 || rating > 99 || pace < 1 || pace > 99 || shooting < 1 || shooting > 99 || passing < 1 || passing > 99 || dribbling < 1 || dribbling > 99 || defending < 1 || defending > 99 || physical < 1 || physical > 99) {
+        if ( pace < 1 || pace > 99 || shooting < 1 || shooting > 99 || passing < 1 || passing > 99 || dribbling < 1 || dribbling > 99 || defending < 1 || defending > 99 || physical < 1 || physical > 99) {
             alert("Please respect the role of the rating .");
             return;
         }
@@ -41,29 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (position === "GK") {
-            const diving = document.getElementById("diving").value;
-            const handling = document.getElementById("handling").value;
-            const kicking = document.getElementById("kicking").value;
-            const reflexes = document.getElementById("reflexes").value;
-            const speed = document.getElementById("speed").value;
-            const positioning = document.getElementById("positioning").value;
-
-            if (diving < 1 || diving > 99 || handling < 1 || handling > 99 || kicking < 1 || kicking > 99 || reflexes < 1 || reflexes > 99 || speed < 1 || speed > 99 || positioning < 1 || positioning > 99) {
-                alert("Please respect the role of the rating .");
-                return;
-            }
-
-            if (!diving || !handling || !kicking || !reflexes || !speed || !positioning) {
-                alert("Please fill in all fields.");
-                return;
-            }
-        } else {
-
-            if (!pace || !shooting || !passing || !dribbling || !defending || !physical) {
-                alert("Please fill in all fields.");
-                return;
-            }
+        if (!pace || !shooting || !passing || !dribbling || !defending || !physical) {
+            alert("Please fill in all fields.");
+            return;
         }
 
 
@@ -90,35 +72,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         editButton.addEventListener('click', function () {
-          0
+
+
+
+
             document.getElementById('name').value = name;
             document.getElementById('photo').value = photo;
             document.getElementById('position').value = position;
             document.getElementById('nationality').value = nationality;
             document.getElementById('club').value = club;
-            document.getElementById('rating').value = rating;
+          
             document.getElementById('pace').value = pace;
             document.getElementById('shooting').value = shooting;
             document.getElementById('passing').value = passing;
             document.getElementById('dribbling').value = dribbling;
             document.getElementById('defending').value = defending;
             document.getElementById('physical').value = physical;
-        
-            if (position === 'GK') {
-                document.getElementById('diving').value = diving;
-                document.getElementById('handling').value = handling;
-                document.getElementById('kicking').value = kicking;
-                document.getElementById('reflexes').value = reflexes;
-                document.getElementById('speed').value = speed;
-                document.getElementById('positioning').value = positioning;
-            }
-        
+
+
             addplayer.addEventListener('click', function () {
                 playerCard.remove();
             });
-        });
-        
 
+        });
 
 
         buttoncontainer.appendChild(editButton);
@@ -126,12 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
         playerCard.appendChild(buttoncontainer);
 
 
-
-
-
         const cardContent = document.createElement('div');
         cardContent.classList.add('card-content');
-
 
 
         const raytingpransipal = document.createElement('div');
@@ -179,8 +151,6 @@ document.addEventListener('DOMContentLoaded', function () {
         playerphotocontainr.appendChild(photoflagclubcontainr);
 
 
-
-
         const playerrayting = document.createElement('p');
         playerrayting.textContent = rating;
         raytingpransipal.appendChild(playerrayting)
@@ -195,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const playerName = document.createElement('p');
         playerName.textContent = name;
-
 
 
         const playerStatscontent = document.createElement('div');
@@ -221,29 +190,20 @@ document.addEventListener('DOMContentLoaded', function () {
             return stat;
         }
 
-
-
-        if (positionSelect.value === 'GK') {
-
-            playerStats.appendChild(createStat('', diving));
-            playerStats.appendChild(createStat('', handling));
-            playerStats.appendChild(createStat('', kicking));
-            playerStats.appendChild(createStat('', reflexes));
-            playerStats.appendChild(createStat('', speed));
-            playerStats.appendChild(createStat('', positioning));
-            playerStatscontent.appendChild(playerraitgk)
-
+        if (position === 'GK') {
+            playerStatscontent.appendChild(playerraitgk);
         } else {
-
-            playerStats.appendChild(createStat('', pace));
-            playerStats.appendChild(createStat('', shooting));
-            playerStats.appendChild(createStat('', passing));
-            playerStats.appendChild(createStat('', dribbling));
-            playerStats.appendChild(createStat('', defending));
-            playerStats.appendChild(createStat('', physical));
-            playerStatscontent.appendChild(playerrait)
-
+            playerStatscontent.appendChild(playerrait);
         }
+
+
+        playerStats.appendChild(createStat('', pace));
+        playerStats.appendChild(createStat('', shooting));
+        playerStats.appendChild(createStat('', passing));
+        playerStats.appendChild(createStat('', dribbling));
+        playerStats.appendChild(createStat('', defending));
+        playerStats.appendChild(createStat('', physical));
+
 
         cardContent.appendChild(raytingpransipal);
         cardContent.appendChild(playerphotocontainr);
@@ -287,28 +247,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+    const inputstats = Array.from(this.getElementsByClassName('form-group-pl'));
 
 
+    position.addEventListener('change', () => {
+        inputstats.forEach(inputstatsselected => {
+            if (position.value === '') {
+                inputstatsselected.style.display = 'none';
 
+            } else {
 
+                inputstatsselected.style.display = 'block';
+            }
+        })
+    });
 
+    const Spans = document.querySelectorAll('.statsforme');
 
-    const positionSelect = document.getElementById('position');
-    const goalkeeperFields = document.querySelectorAll('.form-group-gk');
-    const playerFields = document.querySelectorAll('.form-group-pl');
+    function updateStats() {
+        if (position.value === 'GK') {
 
-    function toggleGoalkeeperFields() {
-        if (positionSelect.value === 'GK') {
-            goalkeeperFields.forEach(field => field.style.display = 'block');
-            playerFields.forEach(field => field.style.display = 'none');
+            Spans[0].textContent = 'DIV';
+            Spans[1].textContent = 'REF';
+            Spans[2].textContent = 'HAN';
+            Spans[3].textContent = 'SPD';
+            Spans[4].textContent = 'KIC';
+            Spans[5].textContent = 'POS';
         } else {
-            goalkeeperFields.forEach(field => field.style.display = 'none');
-            playerFields.forEach(field => field.style.display = 'block');
+
+            Spans[0].textContent = 'PAC';
+            Spans[1].textContent = 'SHO';
+            Spans[2].textContent = 'PAS';
+            Spans[3].textContent = 'DRI';
+            Spans[4].textContent = 'DEF';
+            Spans[5].textContent = 'PHY';
         }
     }
 
-    positionSelect.addEventListener('change', toggleGoalkeeperFields);
-    toggleGoalkeeperFields();
+
+    position.addEventListener('change', updateStats);
+
+
+
 });
 
 

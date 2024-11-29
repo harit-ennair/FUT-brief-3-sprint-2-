@@ -101,6 +101,7 @@
                 <div class="form-group">
                     <label for="position">Position</label>
                     <select id="position" name="position" required>
+                        <option value="">Select a Position</option>
                         <option value="RW">Right Wing</option>
                         <option value="LW">Left Wing</option>
                         <option value="CF">Center Forward</option>
@@ -232,84 +233,41 @@
                     </select>
                 </div>
 
-
-
-
-                
-                    <div class="form-group">
-                        <label for="rating">Rating</label>
-                        <input type="number" id="rating" name="rating" name="rating" min="1" max="99">
-                    </div> 
+                <!-- <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <input type="number" id="rating" name="rating" min="1" max="99">
+                </div>  -->
 
 
 
                 <div style="display: flex; flex-wrap: wrap;">
 
-                    <!-- <div class="form-group-pl">
-                        <label for="rating">Rating</label>
-                        <input type="number" id="rating" name="rating" min="1" max="99">
-                    </div> -->
+                 
                     <div class="form-group-pl">
-                        <label for="pace">Pace</label>
+                        <label for="pace"><span class="statsforme"></span></label>
                         <input type="number" id="pace" name="pace" name="rating" min="1" max="99">
                     </div>
                     <div class="form-group-pl">
-                        <label for="shooting">Shooting</label>
+                        <label for="shooting"><span class="statsforme"></span></label>
                         <input type="number" id="shooting" name="shooting" name="rating" min="1" max="99">
                     </div>
                     <div class="form-group-pl">
-                        <label for="passing">Passing</label>
+                        <label for="passing"><span class="statsforme"></span></label>
                         <input type="number" id="passing" name="passing" name="rating" min="1" max="99">
                     </div>
                     <div class="form-group-pl">
-                        <label for="dribbling">Dribbling</label>
+                        <label for="dribbling"><span class="statsforme"></span></label>
                         <input type="number" id="dribbling" name="dribbling" name="rating" min="1" max="99">
                     </div>
                     <div class="form-group-pl">
-                        <label for="defending">Defending</label>
+                        <label for="defending"><span class="statsforme"></span></label>
                         <input type="number" id="defending" name="defending" name="rating" min="1" max="99">
                     </div>
                     <div class="form-group-pl">
-                        <label for="physical">Physical</label>
+                        <label for="physical"><span class="statsforme"></span></label>
                         <input type="number" id="physical" name="physical" name="rating" min="1" max="99">
                     </div>
                 </div>
-
-
-
-                <div style="display: flex; flex-wrap: wrap;">
-<!-- 
-                    <div class="form-group-gk">
-                        <label for="rating">Rating</label>
-                        <input type="number" id="rating" name="rating" name="rating" min="1" max="99">
-                    </div> -->
-                    <div class="form-group-gk" style="display: none;">
-                        <label for="diving">Diving</label>
-                        <input type="number" id="diving" name="diving" name="rating" min="1" max="99">
-                    </div>
-                    <div class="form-group-gk" style="display: none;">
-                        <label for="handling">Handling</label>
-                        <input type="number" id="handling" name="handling" name="rating" min="1" max="99">
-                    </div>
-                    <div class="form-group-gk" style="display: none;">
-                        <label for="kicking">Kicking</label>
-                        <input type="number" id="kicking" name="kicking" name="rating" min="1" max="99">
-                    </div>
-                    <div class="form-group-gk" style="display: none;">
-                        <label for="reflexes">Reflexes</label>
-                        <input type="number" id="reflexes" name="reflexes" name="rating" min="1" max="99">
-                    </div>
-                    <div class="form-group-gk" style="display: none;">
-                        <label for="speed">Speed</label>
-                        <input type="number" id="speed" name="speed" name="rating" min="1" max="99">
-                    </div>
-                    <div class="form-group-gk" style="display: none;">
-                        <label for="positioning">Positioning</label>
-                        <input type="number" id="positioning" name="positioning" name="rating" min="1" max="99">
-                    </div>
-
-                </div>
-
 
 
                 <button type="submit" id="addplayer">Add player</button>
