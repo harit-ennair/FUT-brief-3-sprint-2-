@@ -1,65 +1,65 @@
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 nav.navber {
-    background-color: #0073e6;
-    padding: 10px;
-    color: white;
-    text-align: center;
+  background-color: #0073e6;
+  padding: 10px;
+  color: white;
+  text-align: center;
 }
 
 nav.navber .Logo {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 nav.navber .Logo img {
-    max-width: 120px;
-    margin-right: 10px;
+  max-width: 120px;
+  margin-right: 10px;
 }
 
 nav.navber .Logo span {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .main {
-    display: flex;
- 
-    align-items: center;
-    min-height: 80vh;
-    padding-left: 10px;
-    padding-right: 10px;
+  display: flex;
+
+  align-items: center;
+  min-height: 80vh;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.container{
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    box-sizing: border-box;
-    text-align: start;
+.container {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  box-sizing: border-box;
+  text-align: start;
 }
+
 .substitute {
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-   
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+
 }
 
 h1 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 
@@ -68,17 +68,17 @@ h1 {
 
 .form-group,
 .form-group-gk,
-.form-group-pl   {
-    margin-bottom: 15px;
+.form-group-pl {
+  margin-bottom: 15px;
 }
 
 .form-group label,
 .form-group-gk label,
-.form-group-pl label  {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 5px;
-    display: block;
+.form-group-pl label {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .form-group input,
@@ -86,13 +86,13 @@ h1 {
 .form-group-gk input,
 .form-group-gk select,
 .form-group-pl input,
-.form-group-pl select  {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.form-group-pl select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -100,74 +100,73 @@ h1 {
 .form-group-gk input:focus,
 .form-group-gk select:focus,
 .form-group-pl input:focus,
-.form-group-pl select:focus
-  {
-    border-color: #0073e6;
-    outline: none;
+.form-group-pl select:focus {
+  border-color: #0073e6;
+  outline: none;
 }
 
 
 
- .form-group-gk input,
- .form-group-pl input {
-     width: 120px;
-     margin-right: 20px;
-   
- }
- 
+.form-group-gk input,
+.form-group-pl input {
+  width: 120px;
+  margin-right: 20px;
+
+}
+
 
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #0073e6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #005bb5;
+  background-color: #005bb5;
 }
 
-.positionplayr{
-display: flex;
+.positionplayr {
+  display: flex;
 
-height: 180px;
-width: 1100px;
-margin: 20px;
-justify-content: center;
-align-items: center;
-gap: 150px;
-
-}
-
-#attack{
-    justify-self: center;
-    justify-content: space-between;
-    width: 800px;
-}
-
-#defans{
-
-    justify-content: space-between;
+  height: 180px;
+  width: 1100px;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
 
 }
 
+#attack {
+  justify-self: center;
+  justify-content: space-between;
+  width: 800px;
+}
+
+#defans {
+
+  justify-content: space-between;
+
+}
 
 
 
-#CBcard{
-    display: flex;
-    gap: 100px;
-  }    
-  
-  
-  
-  
+
+#CBcard {
+  display: flex;
+  gap: 100px;
+}
+
+
+
+
 
 .LM {
   height: 200px;
@@ -179,11 +178,12 @@ gap: 150px;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-}  
+}
+
 .LM:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 4px 10px rgb(154, 180, 9));
-}  
+}
 
 .overlay {
 
@@ -196,7 +196,7 @@ gap: 150px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-}  
+}
 
 .card-content {
   width: 100%;
@@ -204,7 +204,7 @@ gap: 150px;
   text-align: center;
   box-sizing: border-box;
   margin: 0px;
-}  
+}
 
 
 
@@ -212,54 +212,55 @@ gap: 150px;
 .player-club {
   font-size: 0.1em;
   margin: 0px;
-  
-}  
 
-.player-stats{
-  
-  
+}
+
+.player-stats {
+
+
   display: flex;
   justify-self: center;
   gap: 6px;
   font-size: 0.8em;
-  
-}  
 
-.player-stats-content{
-  
+}
+
+.player-stats-content {
+
   display: flex;
   justify-self: center;
   word-spacing: 2px;
   font-size: 0.5em;
-  
-}  
 
-#rayting-pransipal{
+}
+
+#rayting-pransipal {
   justify-self: start;
-  
-  margin-top: 45px;  
+
+  margin-top: 45px;
   margin-left: 20px;
-
-  
-}  
-
-
-#playerphotocontainr{
-  
-  height: 80px;  
-  width: 80px;
-
-margin-left:47px ;
-margin-top: -32px;
 
 
 }
 
-#playerphoto{
+
+#playerphotocontainr {
+
+  height: 80px;
+  width: 80px;
+
+  margin-left: 47px;
+  margin-top: -32px;
+
+
+}
+
+#playerphoto {
   width: 100%;
 
 }
-p{
+
+p {
   margin: 0px;
 }
 
@@ -285,18 +286,18 @@ option {
   vertical-align: middle;
 }
 
-#photoflagclubcontainr{
-  
-    height: 45px;
-    width: 34px;
-    margin-top: -52px;
-    margin-left: -32px;
+#photoflagclubcontainr {
+
+  height: 45px;
+  width: 34px;
+  margin-top: -52px;
+  margin-left: -32px;
 }
 
 
 
 #photoclubcontainr,
-#photoflagcontainr{
+#photoflagcontainr {
 
   height: 22px;
   width: 33px;
@@ -304,9 +305,9 @@ option {
 
 
 #clubphoto,
-#flagphoto{
+#flagphoto {
 
-width: 80%;
+  width: 80%;
 
 }
 
@@ -315,23 +316,48 @@ width: 80%;
 
   font-size: 0.1em;
 }
+
 .stat strong {
   font-weight: bold;
 }
 
 
+.buttoncontainer {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+}
 
 
+.edit {
+  display: none;
+  background: none;
 
+  transition: transform 0.3s ease-in-out;
+}
 
+.edit:hover {
+  transform: scale(1.5);
+}
 
+.delete {
+  background: none;
+  display: none;
 
+  transition: transform 0.3s ease-in-out;
+}
 
+.delete:hover {
+  transform: scale(1.5);
+}
 
+.LM:hover .edit {
+  display: block;
+  background: none;
+}
 
-
-
-
-
-
-
+.LM:hover .delete {
+  display: block;
+  background: none;
+}

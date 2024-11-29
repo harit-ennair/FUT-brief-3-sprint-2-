@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     playerForm.addEventListener('submit', function (event) {
         event.preventDefault();
-
+     
+        const addplayer = document.getElementById('addplayer')
 
         const name = document.getElementById('name').value;
         const photo = document.getElementById('photo').value;
         const position = document.getElementById('position').value;
         const nationality = document.getElementById('nationality').value;
         const club = document.getElementById('club').value;
+
         const rating = document.getElementById('rating').value;
         const pace = document.getElementById('pace').value;
         const shooting = document.getElementById('shooting').value;
@@ -18,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const dribbling = document.getElementById('dribbling').value;
         const defending = document.getElementById('defending').value;
         const physical = document.getElementById('physical').value;
-
 
         const diving = document.getElementById('diving').value;
         const handling = document.getElementById('handling').value;
@@ -67,12 +68,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
         const playerCard = document.createElement('div');
         playerCard.classList.add('LM');
+
+
+        const buttoncontainer = document.createElement('div');
+        buttoncontainer.className = 'buttoncontainer';
+
+        const editButton = document.createElement('button');
+        editButton.className = 'edit';
+        editButton.textContent = '✏️';
+
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete';
+        deleteButton.textContent = '🗑️';
+
+
+
+        deleteButton.addEventListener('click', function () {
+            playerCard.remove();
+        });
+
+        editButton.addEventListener('click', function () {
+          0
+            document.getElementById('name').value = name;
+            document.getElementById('photo').value = photo;
+            document.getElementById('position').value = position;
+            document.getElementById('nationality').value = nationality;
+            document.getElementById('club').value = club;
+            document.getElementById('rating').value = rating;
+            document.getElementById('pace').value = pace;
+            document.getElementById('shooting').value = shooting;
+            document.getElementById('passing').value = passing;
+            document.getElementById('dribbling').value = dribbling;
+            document.getElementById('defending').value = defending;
+            document.getElementById('physical').value = physical;
+        
+            if (position === 'GK') {
+                document.getElementById('diving').value = diving;
+                document.getElementById('handling').value = handling;
+                document.getElementById('kicking').value = kicking;
+                document.getElementById('reflexes').value = reflexes;
+                document.getElementById('speed').value = speed;
+                document.getElementById('positioning').value = positioning;
+            }
+        
+            addplayer.addEventListener('click', function () {
+                playerCard.remove();
+            });
+        });
+        
+
+
+
+        buttoncontainer.appendChild(editButton);
+        buttoncontainer.appendChild(deleteButton);
+        playerCard.appendChild(buttoncontainer);
+
+
 
 
 
@@ -114,12 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
         photoflagclubcontainr.appendChild(photoclubcontainr);
         photoclubcontainr.appendChild(clubphoto);
         clubphoto.src = club;
-
-
-
-
-
-
 
 
         const playerphoto = document.createElement('img');
@@ -173,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
             stat.appendChild(document.createTextNode(value));
             return stat;
         }
+
 
 
         if (positionSelect.value === 'GK') {
@@ -237,6 +285,13 @@ document.addEventListener('DOMContentLoaded', function () {
         playerForm.reset();
 
     });
+
+
+
+
+
+
+
 
     const positionSelect = document.getElementById('position');
     const goalkeeperFields = document.querySelectorAll('.form-group-gk');
