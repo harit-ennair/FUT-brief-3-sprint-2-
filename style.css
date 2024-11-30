@@ -47,7 +47,7 @@ nav.navber .Logo span {
   text-align: start;
 }
 
-.substitute {
+#substitute {
   background-color: white;
   padding: 10px;
   border-radius: 8px;
@@ -156,16 +156,10 @@ button:hover {
 }
 
 
-
-
 #CBcard {
   display: flex;
   gap: 100px;
 }
-
-
-
-
 
 .LM {
   height: 200px;
