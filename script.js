@@ -213,14 +213,14 @@ document.addEventListener('DOMContentLoaded', function () {
         playerCard.appendChild(cardContent);
 
         if (rating < 50) {
-            playerCard.style.backgroundImage = `url(/image/silver1.png)`;
+            playerCard.style.backgroundImage = `url(./image/silver1.png)`;
         } else if (rating >= 50 && rating < 70) {
-            playerCard.style.backgroundImage = `url(/image/badge_gold.webp)`;
+            playerCard.style.backgroundImage = `url(./image/badge_gold.webp)`;
 
         } else if (rating >= 70 && rating < 80) {
-            playerCard.style.backgroundImage = `url(/image/badge_ballon_dor.webp)`;
+            playerCard.style.backgroundImage = `url(./image/badge_ballon_dor.webp)`;
         } else {
-            playerCard.style.backgroundImage = `url(/image/badge_total_rush.webp)`;
+            playerCard.style.backgroundImage = `url(./image/badge_total_rush.webp)`;
         }
 
 
