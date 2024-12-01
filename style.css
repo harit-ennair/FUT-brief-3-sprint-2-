@@ -46,13 +46,30 @@ nav.navber .Logo span {
   box-sizing: border-box;
   text-align: start;
 }
-
+#positionplayrcontainer{
+ background-image: url(./image/stadium_background.webp); 
+ background-repeat: no-repeat; 
+ background-size: cover; 
+ height: 90vh;
+  width: 1400px; 
+  margin: 20px; 
+  border-radius: 10px; 
+}
 #substitute {
+  /* display: flex;
+  flex-direction: column; */
+  margin: 20px;
+  text-align: center;
   background-color: white;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
+  /* overflow: hidden; */
+  overflow: scroll;
+  height: 90vh;
+  /* align-items: center;
+   */
 
 }
 
@@ -132,6 +149,7 @@ button:hover {
 }
 
 .positionplayr {
+  
   display: flex;
 
   height: 180px;
@@ -154,7 +172,10 @@ button:hover {
   justify-content: space-between;
 
 }
-
+#form-group-pl-container{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 #CBcard {
   display: flex;
@@ -354,3 +375,19 @@ option {
   display: block;
   background: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
