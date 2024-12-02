@@ -81,13 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
             playerCard.remove();
             positionCounts[position]--;
 
-            console.log(positionCounts)
         });
 
         editButton.addEventListener('click', function () {
             positionCounts[position]--;
-
-
 
 
             document.getElementById('name').value = name;
@@ -240,36 +237,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        console.log(positionCounts.GK)
 
-
-
-
-
-
-
-            if (position === 'GK' && parseInt(positionCounts.GK) < 1) {
+            if (position === 'GK' && parseInt(positionCounts.GK) <=0) {
                 document.getElementById('goal').appendChild(playerCard);
                 positionCounts.GK++;
-            } else if (position === 'CF' && parseInt(positionCounts.CF) < 1) {
+            } else if (position === 'CF' && parseInt(positionCounts.CF) <=0) {
                 document.getElementById('stcard').appendChild(playerCard);
                 positionCounts.CF++;
-            } else if (position === 'RW' && parseInt(positionCounts.RW) < 1) {
+            } else if (position === 'RW' && parseInt(positionCounts.RW) <=0) {
                 document.getElementById('rwcard').appendChild(playerCard);
                 positionCounts.RW++;
-            } else if (position === 'LW' && parseInt(positionCounts.LW) < 1) {
+            } else if (position === 'LW' && parseInt(positionCounts.LW) <=0) {
                 document.getElementById('lwcard').appendChild(playerCard);
                 positionCounts.LW++;
             } else if (position === 'CM' && parseInt(positionCounts.CM) < 2) {
                 document.getElementById('medfild').appendChild(playerCard);
                 positionCounts.CM++;
-            } else if (position === 'CDM' && parseInt(positionCounts.CDM) < 1) {
+            } else if (position === 'CDM' && parseInt(positionCounts.CDM) <=0) {
                 document.getElementById('medfild').appendChild(playerCard);
                 positionCounts.CDM++;
-            } else if (position === 'LB' && parseInt(positionCounts.LB) < 1) {
+            } else if (position === 'LB' && parseInt(positionCounts.LB) <=0) {
                 document.getElementById('lbcard').appendChild(playerCard);
                 positionCounts.LB++;
-            } else if (position === 'RB' && parseInt(positionCounts.RB) < 1) {
+            } else if (position === 'RB' && parseInt(positionCounts.RB) <=0) {
                 document.getElementById('rbcard').appendChild(playerCard);
                 positionCounts.RB++;
             } else if (position === 'CB' && parseInt(positionCounts.CB) <2 ) {
@@ -277,10 +267,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 positionCounts.CB++;
             } else {
                 document.getElementById('substitute').appendChild(playerCard);
+                positionCounts[position]++;
             }
-        
-        
-
 
 
         console.log(positionCounts)
@@ -303,6 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     });
+
 
     const Spans = document.querySelectorAll('.statsforme');
 

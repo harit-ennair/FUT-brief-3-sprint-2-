@@ -56,8 +56,7 @@ nav.navber .Logo span {
   border-radius: 10px; 
 }
 #substitute {
-  /* display: flex;
-  flex-direction: column; */
+
   margin: 20px;
   text-align: center;
   background-color: white;
@@ -65,12 +64,9 @@ nav.navber .Logo span {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
-  /* overflow: hidden; */
   overflow: scroll;
   height: 90vh;
-  /* align-items: center;
-   */
-
+  
 }
 
 h1 {
@@ -84,7 +80,6 @@ h1 {
 
 
 .form-group,
-
 .form-group-pl {
   margin-bottom: 15px;
 }
@@ -151,6 +146,7 @@ button:hover {
 .positionplayr {
   
   display: flex;
+  justify-self: center;
 
   height: 180px;
   width: 1100px;
@@ -168,7 +164,8 @@ button:hover {
 }
 
 #defans {
-
+  justify-self: center;
+ 
   justify-content: space-between;
 
 }
@@ -199,34 +196,12 @@ button:hover {
   filter: drop-shadow(0 4px 10px rgb(154, 180, 9));
 }
 
-.overlay {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3px;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
 .card-content {
   width: 100%;
   color: white;
   text-align: center;
   box-sizing: border-box;
   margin: 0px;
-}
-
-
-
-.player-name,
-.player-club {
-  font-size: 0.1em;
-  margin: 0px;
-
 }
 
 .player-stats {
@@ -326,10 +301,6 @@ option {
 }
 
 
-.stat {
-
-  font-size: 0.1em;
-}
 
 .stat strong {
   font-weight: bold;
@@ -377,17 +348,87 @@ option {
 }
 
 
+@media (max-width: 768px) {
 
 
 
+  .main {
+      flex-direction: column;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .container {
+      width: 100%;
+      padding: 15px;
+  }
+
+
+  #positionplayrcontainer {
+      width: 100%;
+      height: auto;
+  }
+
+  #substitute {
+    
+    overflow-x: scroll;
+    display: flex;
+      width: 100%;
+      margin: 10px;
+      height: auto;
+  }
+ 
+
+  .player-name {
+      font-size: 0.8em;
+  }
+
+  .player-stats {
+      font-size: 0.7em;
+  }
+
+  .positionplayr {
+
+    height: 180px;
+    width: 650px;
+   
+  }
+  
+#attack {
+
+  width: 600px;
+  gap: 10px;
+}
+#medfild{
+
+  gap: 10px;
+}
+
+#defans {
+ width: 700px;
+ gap: 20px ;
+}
+#CBcard {
+  gap: 20px
+
+}
+
+
+#positionplayrcontainer {
+  background-position-x: -130px;
+}
+ 
+}
 
 
 
+@media (max-width: 425px) {
 
+  #positionplayrcontainer {
+    display: flex;
+    flex-direction: column;
+    background-position-x: -345px;
+    overflow-x: scroll;
 
-
-
-
-
-
-
+}
+}
