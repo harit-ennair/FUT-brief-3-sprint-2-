@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-
     <nav class="navber">
         <div class="Logo">
             <img src="./image/Easports_fifa_logo.svg" alt="Logo">
@@ -18,43 +16,29 @@
         </div>
     </nav>
 
-
     <div class="main">
-
         <div id="positionplayrcontainer">
-
-
             <div class="positionplayr" id="attack">
-
-
                 <div class="post" id="lwcard"></div>
                 <div class="post" id="stcard"></div>
                 <div class="post" id="rwcard"></div>
             </div>
 
-
             <div class="positionplayr" id="medfild">
-
-
             </div>
 
-
             <div class="positionplayr" id="defans">
-
                 <div class="post" id="lbcard"></div>
                 <div class="post" id="CBcard"></div>
-
                 <div class="post" id="rbcard"></div>
-
             </div>
 
             <div class="positionplayr" id="goal">
-
             </div>
 
         </div>
 
-        <div id="substitute" >
+        <div id="substitute">
             <h1 id="textsub">Sub</h1>
         </div>
         <div class="container">
@@ -64,6 +48,7 @@
                     <label for="name">player Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+
                 <div class="form-group">
                     <label for="photo">Photo URL</label>
                     <select id="photo" name="photo">
@@ -95,8 +80,8 @@
                         <option value="https://cdn.sofifa.net/players/259/480/25_120.png">photo 25</option>
                         <option value="https://cdn.sofifa.net/players/230/621/25_120.png">photo 26</option>
                     </select>
-
                 </div>
+
                 <div class="form-group">
                     <label for="position">Position</label>
                     <select id="position" name="position" required>
@@ -112,6 +97,7 @@
                         <option value="GK">Goalkeeper</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="nationality">Nationality</label>
                     <select id="nationality" name="nationality">
@@ -171,6 +157,7 @@
                             Japan</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="club">Club</label>
                     <select id="club" name="club">
@@ -232,13 +219,8 @@
                     </select>
                 </div>
 
-           
+                <div id="form-group-pl-container">
 
-
-
-                <div id="form-group-pl-container" >
-
-                 
                     <div class="form-group-pl">
                         <label for="pace"><span class="statsforme"></span></label>
                         <input type="number" id="pace" name="pace" name="rating" min="1" max="99">
@@ -265,12 +247,10 @@
                     </div>
                 </div>
 
-
                 <button type="submit" id="addplayer">Add player</button>
             </form>
         </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>

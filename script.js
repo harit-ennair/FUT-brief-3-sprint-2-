@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
         RW: 0,
         LW: 0,
         CM: 0,
-        CDM:0,
+        CDM: 0,
         LB: 0,
         RB: 0,
         CB: 0,
         GK: 0
-};
+    };
 
     playerForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const addplayer = document.getElementById('addplayer')
-        
+
         const name = document.getElementById('name').value;
         const photo = document.getElementById('photo').value;
         const position = document.getElementById('position').value;
@@ -32,31 +32,27 @@ document.addEventListener('DOMContentLoaded', function () {
         const defending = document.getElementById('defending').value;
         const physical = document.getElementById('physical').value;
 
-        const pace1 = parseInt(pace) ;
-        const shooting1 = parseInt(shooting) ;
-        const passing1 = parseInt(passing) ;
-        const dribbling1 = parseInt(dribbling) ;
-        const defending1 = parseInt(defending) ;
-        const physical1 = parseInt(physical) ;
+        const pace1 = parseInt(pace);
+        const shooting1 = parseInt(shooting);
+        const passing1 = parseInt(passing);
+        const dribbling1 = parseInt(dribbling);
+        const defending1 = parseInt(defending);
+        const physical1 = parseInt(physical);
 
         const rating = parseInt((pace1 + shooting1 + passing1 + dribbling1 + defending1 + physical1) / 6);
-
 
         if (pace < 1 || pace > 99 || shooting < 1 || shooting > 99 || passing < 1 || passing > 99 || dribbling < 1 || dribbling > 99 || defending < 1 || defending > 99 || physical < 1 || physical > 99) {
             alert("Please respect the role of the rating .");
             return;
         }
 
-
         if (!name || !photo || !nationality || !club || !position || !rating) {
             alert("Please fill in all fields.");
             return;
         }
 
-
         const playerCard = document.createElement('div');
         playerCard.classList.add('LM');
-
 
         const buttoncontainer = document.createElement('div');
         buttoncontainer.className = 'buttoncontainer';
@@ -69,17 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
         deleteButton.className = 'delete';
         deleteButton.textContent = '🗑️';
 
-
-
         deleteButton.addEventListener('click', function () {
             playerCard.remove();
             positionCounts[position]--;
-
         });
 
         editButton.addEventListener('click', function () {
             positionCounts[position]--;
-
 
             document.getElementById('name').value = name;
             document.getElementById('photo').value = photo;
@@ -94,33 +86,24 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('defending').value = defending;
             document.getElementById('physical').value = physical;
 
-
             addplayer.addEventListener('click', function () {
                 playerCard.remove();
-
                 console.log(positionCounts)
             });
-
         });
-
 
         buttoncontainer.appendChild(editButton);
         buttoncontainer.appendChild(deleteButton);
         playerCard.appendChild(buttoncontainer);
 
-
         const cardContent = document.createElement('div');
         cardContent.classList.add('card-content');
-
 
         const raytingpransipal = document.createElement('div');
         raytingpransipal.id = 'rayting-pransipal';
 
-
-
         const playerphotocontainr = document.createElement('div');
         playerphotocontainr.id = 'playerphotocontainr';
-
 
         const photoflagclubcontainr = document.createElement('div');
         photoflagclubcontainr.id = 'photoflagclubcontainr';
@@ -135,8 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
         photoflagcontainr.appendChild(flagphoto);
         flagphoto.src = nationality;
 
-
-
         const photoclubcontainr = document.createElement('div');
         photoclubcontainr.id = 'photoclubcontainr';
 
@@ -147,32 +128,23 @@ document.addEventListener('DOMContentLoaded', function () {
         photoclubcontainr.appendChild(clubphoto);
         clubphoto.src = club;
 
-
         const playerphoto = document.createElement('img');
         playerphoto.id = 'playerphoto'
         playerphoto.src = photo;
 
-
-
         playerphotocontainr.appendChild(playerphoto);
         playerphotocontainr.appendChild(photoflagclubcontainr);
-
 
         const playerrayting = document.createElement('p');
         playerrayting.textContent = rating;
         raytingpransipal.appendChild(playerrayting)
 
-
         const playerpost = document.createElement('p');
         playerpost.textContent = position;
         raytingpransipal.appendChild(playerpost)
 
-
-
-
         const playerName = document.createElement('p');
         playerName.textContent = name;
-
 
         const playerStatscontent = document.createElement('div');
         playerStatscontent.classList.add('player-stats-content');
@@ -183,22 +155,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const playerraitgk = document.createElement('p');
         playerraitgk.textContent = "DIV HAN KIC REF SPE POS"
 
-
         const playerStats = document.createElement('div');
         playerStats.classList.add('player-stats');
-
-
 
         if (position === 'GK') {
             playerStatscontent.appendChild(playerraitgk);
         } else {
             playerStatscontent.appendChild(playerrait);
         }
-        
+
         function createStat(value) {
             let stat = document.createElement('div');
-            stat.textContent = value; 
-            return stat;                             
+            stat.textContent = value;
+            return stat;
         }
 
         playerStats.appendChild(createStat(pace));
@@ -207,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function () {
         playerStats.appendChild(createStat(dribbling));
         playerStats.appendChild(createStat(defending));
         playerStats.appendChild(createStat(physical));
-
 
         cardContent.appendChild(raytingpransipal);
         cardContent.appendChild(playerphotocontainr);
@@ -226,107 +194,103 @@ document.addEventListener('DOMContentLoaded', function () {
             playerCard.style.backgroundImage = `url(./image/badge_total_rush.webp)`;
         }
 
+        switch (position) {
+            case ('GK'):
+                if (positionCounts.GK <= 0) {
+                    document.getElementById('goal').appendChild(playerCard);
+                    positionCounts.GK++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.GK++;
+                }
+                break;
 
+            case ('CF'):
+                if (positionCounts.CF <= 0) {
+                    document.getElementById('stcard').appendChild(playerCard);
+                    positionCounts.CF++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.CF++;
+                }
+                break;
 
-            switch (position) {
-                case ('GK'): 
-                    if (positionCounts.GK <= 0) {
-                        document.getElementById('goal').appendChild(playerCard);
-                        positionCounts.GK++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.GK++;
-                    }
-                    break;
-            
-                case ('CF'): 
-                    if (positionCounts.CF <= 0) {
-                        document.getElementById('stcard').appendChild(playerCard);
-                        positionCounts.CF++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.CF++;
-                    }
-                    break;
-            
-                case ('LW'): 
-                    if (positionCounts.LW <= 0) {  
-                        document.getElementById('lwcard').appendChild(playerCard);
-                        positionCounts.LW++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.LW++;
-                    }
-                    break;
-            
-                case ('RW'): 
-                    if (positionCounts.RW <= 0) {
-                        document.getElementById('rwcard').appendChild(playerCard);
-                        positionCounts.RW++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.RW++;
-                    }
-                    break;
-            
-                case ('CM'): 
-                    if (positionCounts.CM < 2) {  
-                        document.getElementById('medfild').appendChild(playerCard);
-                        positionCounts.CM++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.CM++;
-                    }
-                    break;
-            
-                case ('CDM'): 
-                    if (positionCounts.CDM <= 0) {
-                        document.getElementById('medfild').appendChild(playerCard);
-                        positionCounts.CDM++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.CDM++;
-                    }
-                    break;
-            
-                case ('LB'): 
-                    if (positionCounts.LB <= 0) {
-                        document.getElementById('lbcard').appendChild(playerCard);
-                        positionCounts.LB++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.LB++;
-                    }
-                    break;
-            
-                case ('RB'): 
-                    if (positionCounts.RB <= 0) {
-                        document.getElementById('rbcard').appendChild(playerCard);
-                        positionCounts.RB++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.RB++;
-                    }
-                    break;
-            
-                case ('CB'): 
-                    if (positionCounts.CB < 2) {
-                        document.getElementById('CBcard').appendChild(playerCard);
-                        positionCounts.CB++;
-                    } else {
-                        document.getElementById('substitute').appendChild(playerCard);
-                        positionCounts.CB++;
-                    }
-                    break;
-            }
-            
+            case ('LW'):
+                if (positionCounts.LW <= 0) {
+                    document.getElementById('lwcard').appendChild(playerCard);
+                    positionCounts.LW++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.LW++;
+                }
+                break;
+
+            case ('RW'):
+                if (positionCounts.RW <= 0) {
+                    document.getElementById('rwcard').appendChild(playerCard);
+                    positionCounts.RW++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.RW++;
+                }
+                break;
+
+            case ('CM'):
+                if (positionCounts.CM < 2) {
+                    document.getElementById('medfild').appendChild(playerCard);
+                    positionCounts.CM++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.CM++;
+                }
+                break;
+
+            case ('CDM'):
+                if (positionCounts.CDM <= 0) {
+                    document.getElementById('medfild').appendChild(playerCard);
+                    positionCounts.CDM++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.CDM++;
+                }
+                break;
+
+            case ('LB'):
+                if (positionCounts.LB <= 0) {
+                    document.getElementById('lbcard').appendChild(playerCard);
+                    positionCounts.LB++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.LB++;
+                }
+                break;
+
+            case ('RB'):
+                if (positionCounts.RB <= 0) {
+                    document.getElementById('rbcard').appendChild(playerCard);
+                    positionCounts.RB++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.RB++;
+                }
+                break;
+
+            case ('CB'):
+                if (positionCounts.CB < 2) {
+                    document.getElementById('CBcard').appendChild(playerCard);
+                    positionCounts.CB++;
+                } else {
+                    document.getElementById('substitute').appendChild(playerCard);
+                    positionCounts.CB++;
+                }
+                break;
+        }
 
         console.log(positionCounts)
 
         playerForm.reset();
 
     });
-
 
     const inputstats = Array.from(document.getElementsByClassName('form-group-pl'));
 
@@ -363,12 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
     position.addEventListener('change', updateStats);
 
-
-
-
-    
 });
-
