@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
         RW: 0,
         LW: 0,
         CM: 0,
-        CDM: 0,
+        CDM:0,
         LB: 0,
         RB: 0,
         CB: 0,
         GK: 0
-    };
+};
 
     playerForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const addplayer = document.getElementById('addplayer')
-
+        
         const name = document.getElementById('name').value;
         const photo = document.getElementById('photo').value;
         const position = document.getElementById('position').value;
@@ -52,12 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Please fill in all fields.");
             return;
         }
-
-        if (!pace || !shooting || !passing || !dribbling || !defending || !physical) {
-            alert("Please fill in all fields.");
-            return;
-        }
-
 
 
         const playerCard = document.createElement('div');
@@ -194,28 +188,25 @@ document.addEventListener('DOMContentLoaded', function () {
         playerStats.classList.add('player-stats');
 
 
-        function createStat(label, value) {
-            const stat = document.createElement('div');
-            const statLabel = document.createElement('strong');
-            statLabel.textContent = label;
-            stat.appendChild(statLabel);
-            stat.appendChild(document.createTextNode(value));
-            return stat;
-        }
 
         if (position === 'GK') {
             playerStatscontent.appendChild(playerraitgk);
         } else {
             playerStatscontent.appendChild(playerrait);
         }
+        
+        function createStat(value) {
+            let stat = document.createElement('div');
+            stat.textContent = value; 
+            return stat;                             
+        }
 
-
-        playerStats.appendChild(createStat('', pace));
-        playerStats.appendChild(createStat('', shooting));
-        playerStats.appendChild(createStat('', passing));
-        playerStats.appendChild(createStat('', dribbling));
-        playerStats.appendChild(createStat('', defending));
-        playerStats.appendChild(createStat('', physical));
+        playerStats.appendChild(createStat(pace));
+        playerStats.appendChild(createStat(shooting));
+        playerStats.appendChild(createStat(passing));
+        playerStats.appendChild(createStat(dribbling));
+        playerStats.appendChild(createStat(defending));
+        playerStats.appendChild(createStat(physical));
 
 
         cardContent.appendChild(raytingpransipal);
@@ -237,39 +228,98 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-            if (position === 'GK' && parseInt(positionCounts.GK) <=0) {
-                document.getElementById('goal').appendChild(playerCard);
-                positionCounts.GK++;
-            } else if (position === 'CF' && parseInt(positionCounts.CF) <=0) {
-                document.getElementById('stcard').appendChild(playerCard);
-                positionCounts.CF++;
-            } else if (position === 'RW' && parseInt(positionCounts.RW) <=0) {
-                document.getElementById('rwcard').appendChild(playerCard);
-                positionCounts.RW++;
-            } else if (position === 'LW' && parseInt(positionCounts.LW) <=0) {
-                document.getElementById('lwcard').appendChild(playerCard);
-                positionCounts.LW++;
-            } else if (position === 'CM' && parseInt(positionCounts.CM) < 2) {
-                document.getElementById('medfild').appendChild(playerCard);
-                positionCounts.CM++;
-            } else if (position === 'CDM' && parseInt(positionCounts.CDM) <=0) {
-                document.getElementById('medfild').appendChild(playerCard);
-                positionCounts.CDM++;
-            } else if (position === 'LB' && parseInt(positionCounts.LB) <=0) {
-                document.getElementById('lbcard').appendChild(playerCard);
-                positionCounts.LB++;
-            } else if (position === 'RB' && parseInt(positionCounts.RB) <=0) {
-                document.getElementById('rbcard').appendChild(playerCard);
-                positionCounts.RB++;
-            } else if (position === 'CB' && parseInt(positionCounts.CB) <2 ) {
-                document.getElementById('CBcard').appendChild(playerCard);
-                positionCounts.CB++;
-            } else {
-                document.getElementById('substitute').appendChild(playerCard);
-                positionCounts[position]++;
+            switch (position) {
+                case ('GK'): 
+                    if (positionCounts.GK <= 0) {
+                        document.getElementById('goal').appendChild(playerCard);
+                        positionCounts.GK++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.GK++;
+                    }
+                    break;
+            
+                case ('CF'): 
+                    if (positionCounts.CF <= 0) {
+                        document.getElementById('stcard').appendChild(playerCard);
+                        positionCounts.CF++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.CF++;
+                    }
+                    break;
+            
+                case ('LW'): 
+                    if (positionCounts.LW <= 0) {  
+                        document.getElementById('lwcard').appendChild(playerCard);
+                        positionCounts.LW++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.LW++;
+                    }
+                    break;
+            
+                case ('RW'): 
+                    if (positionCounts.RW <= 0) {
+                        document.getElementById('rwcard').appendChild(playerCard);
+                        positionCounts.RW++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.RW++;
+                    }
+                    break;
+            
+                case ('CM'): 
+                    if (positionCounts.CM < 2) {  
+                        document.getElementById('medfild').appendChild(playerCard);
+                        positionCounts.CM++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.CM++;
+                    }
+                    break;
+            
+                case ('CDM'): 
+                    if (positionCounts.CDM <= 0) {
+                        document.getElementById('medfild').appendChild(playerCard);
+                        positionCounts.CDM++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.CDM++;
+                    }
+                    break;
+            
+                case ('LB'): 
+                    if (positionCounts.LB <= 0) {
+                        document.getElementById('lbcard').appendChild(playerCard);
+                        positionCounts.LB++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.LB++;
+                    }
+                    break;
+            
+                case ('RB'): 
+                    if (positionCounts.RB <= 0) {
+                        document.getElementById('rbcard').appendChild(playerCard);
+                        positionCounts.RB++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.RB++;
+                    }
+                    break;
+            
+                case ('CB'): 
+                    if (positionCounts.CB < 2) {
+                        document.getElementById('CBcard').appendChild(playerCard);
+                        positionCounts.CB++;
+                    } else {
+                        document.getElementById('substitute').appendChild(playerCard);
+                        positionCounts.CB++;
+                    }
+                    break;
             }
-
+            
 
         console.log(positionCounts)
 
@@ -278,8 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    const inputstats = Array.from(this.getElementsByClassName('form-group-pl'));
-
+    const inputstats = Array.from(document.getElementsByClassName('form-group-pl'));
 
     position.addEventListener('change', () => {
         inputstats.forEach(inputstatsselected => {
@@ -292,8 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     });
 
-
-    const Spans = document.querySelectorAll('.statsforme');
+    const Spans = document.querySelectorAll('.statsforme');//retorn nodelist
 
     function updateStats() {
         if (position.value === 'GK') {
@@ -318,5 +366,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     position.addEventListener('change', updateStats);
 
+
+
+
+    
 });
 
